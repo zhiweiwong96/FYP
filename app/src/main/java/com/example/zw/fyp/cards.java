@@ -12,7 +12,7 @@ public class cards {
         return userId;
     }
     public void setUserID(String userID){
-        this.userId=userId;
+        this.userId = userId;
     }
 
     public String getName(){
@@ -21,4 +21,6 @@ public class cards {
     public void setName(String name){
         this.name = name;
     }
+
+
 }

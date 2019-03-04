@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
         usersDb.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                if(dataSnapshot.exists() && !dataSnapshot.child("connection").child("nope").hasChild(currentUId) && !dataSnapshot.child("connection").child("yeps").hasChild(currentUId) && dataSnapshot.child("sex").getValue().toString().equals(oppUserSex)){
+                if(dataSnapshot.exists() && !dataSnapshot.child("connections").child("nope").hasChild(currentUId) && !dataSnapshot.child("connection").child("yeps").hasChild(currentUId) && dataSnapshot.child("sex").getValue().toString().equals(oppUserSex)){
                     String profileImageUrl = "default";
                     if(dataSnapshot.child("profileImageUrl").getValue().equals("default")){
                         profileImageUrl = dataSnapshot.child("profileImageUrl").getValue().toString();

@@ -14,6 +14,7 @@ import java.util.List;
 
 public class arrayAdapter extends ArrayAdapter<cards> {
 
+    //pass inside the adapter
     Context context;
 
     public arrayAdapter(Context context, int resourceId, List<cards> items){
@@ -29,7 +30,12 @@ public class arrayAdapter extends ArrayAdapter<cards> {
         TextView name = (TextView) convertView.findViewById(R.id.name);
         ImageView image = (ImageView) convertView.findViewById(R.id.image);
 
-        name.setText(card_item.getName());
+        if(name != null){
+            name.setText(card_item.getName());
+        }else{
+
+        }
+
         switch(card_item.getProfileImageUrl()){
             case "default":
                 Glide.with(convertView.getContext()).load(R.mipmap.ic_launcher).into(image);

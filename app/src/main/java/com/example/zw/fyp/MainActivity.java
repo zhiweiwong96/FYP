@@ -115,7 +115,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    Toast.makeText(MainActivity.this, "new Conncection", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "new Connection", Toast.LENGTH_LONG).show();
+                    //when both of them swipe right for each other, create matches
                     usersDb.child(dataSnapshot.getKey()).child("connections").child("matches").child(currentUId).setValue(true);
                     usersDb.child(currentUId).child("connections").child("matches").child(dataSnapshot.getKey()).setValue(true);
                 }

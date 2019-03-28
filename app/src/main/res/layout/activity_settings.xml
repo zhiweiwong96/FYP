@@ -14,31 +14,134 @@
         android:layout_marginBottom="20sp"
         />
 
-    <EditText
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Name"/>
+
+    <EditText
         android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
         android:background="@null"
-        android:hint="Name"
-        android:layout_marginBottom="20sp" />
+        android:hint="User's Name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="429dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:background="@null"
+        android:hint="User's Age"
+        android:inputType="phone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/phone"
         android:background="@null"
-        android:hint="Phone"
+        android:hint="Phone Number"
         android:layout_marginBottom="20sp"
         android:inputType="phone"/>
-    <Button
-        android:layout_width="match_parent"
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/confirm"
-        android:text="confirm"/>
+        android:text="Gender"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Race" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:entries="@color/colorPrimary"
+        android:prompt="@color/colorPrimary">
+    </Spinner>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Interest" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:entries="@color/colorPrimary"
+        android:prompt="@color/colorPrimary">
+    </Spinner>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Education Level" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:entries="@color/colorPrimary"
+        android:prompt="@color/colorPrimary">
+    </Spinner>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Horoscope" />
+
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:entries="@color/colorPrimary"
+        android:prompt="@color/colorPrimary">
+    </Spinner>
 
     <Button
+        android:layout_gravity="center"
+        android:id="@+id/confirm"
+        android:layout_width="218dp"
+        android:layout_height="wrap_content"
+        android:text="confirm" />
+
+
+    <Button
+        android:layout_gravity="center"
         android:id="@+id/back"
-        android:layout_width="match_parent"
+        android:layout_width="218dp"
         android:layout_height="wrap_content"
         android:text="back" />
 

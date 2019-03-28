@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
             public void onRightCardExit(Object dataObject) {
                 cards obj = (cards) dataObject;
                 String userId = obj.getUserId();
+                System.out.println("UserID = "+ userId);
                 usersDb.child(userId).child("connection").child("yeps").child(currentUId).setValue(true);
                 isConnectionMatch(userId);
                 System.out.println("passed isConnectionMatch");
@@ -111,16 +112,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void isConnectionMatch(String userId) {
+        System.out.println("Inside isConnectionMatch");
         DatabaseReference currentUserConnectionDb = usersDb.child(currentUId).child("connections").child("yeps").child(userId);
         currentUserConnectionDb.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                System.out.println("Inside onDataChange (isConnectionMatch)");
+
                 if(dataSnapshot.exists()){
                     Toast.makeText(MainActivity.this, "new Connection", Toast.LENGTH_LONG).show();
                     //when both of them swipe right for each other, create matches
                     usersDb.child(dataSnapshot.getKey()).child("connections").child("matches").child(currentUId).setValue(true);
                     usersDb.child(currentUId).child("connections").child("matches").child(dataSnapshot.getKey()).setValue(true);
                     System.out.println("Match should be created successfully");
+                }else{
+                    System.out.println("dataSnapshot not exist");
                 }
             }
 

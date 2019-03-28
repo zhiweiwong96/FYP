@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 String userId = obj.getUserId();
                 usersDb.child(userId).child("connection").child("yeps").child(currentUId).setValue(true);
                 isConnectionMatch(userId);
+                System.out.println("passed isConnectionMatch");
                 Toast.makeText(MainActivity.this, "right", Toast.LENGTH_SHORT).show();
             }
 
@@ -119,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
                     //when both of them swipe right for each other, create matches
                     usersDb.child(dataSnapshot.getKey()).child("connections").child("matches").child(currentUId).setValue(true);
                     usersDb.child(currentUId).child("connections").child("matches").child(dataSnapshot.getKey()).setValue(true);
+                    System.out.println("Match should be created successfully");
                 }
             }
 

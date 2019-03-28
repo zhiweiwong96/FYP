@@ -24,16 +24,19 @@ public class arrayAdapter extends ArrayAdapter<cards> {
         cards card_item = getItem(position);
 
         if (convertView == null) {
+            System.out.println("inside convert view = null");
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item, parent, false);
         }
 
         TextView name = (TextView) convertView.findViewById(R.id.name);
         ImageView image = (ImageView) convertView.findViewById(R.id.image);
 
+        //NullPointerException
         if(name != null){
+            System.out.println("not null");
             name.setText(card_item.getName());
         }else{
-
+            System.out.println("null");
         }
 
         switch(card_item.getProfileImageUrl()){
